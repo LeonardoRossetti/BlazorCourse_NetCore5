@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yTr4vjJPqG7La4vXLLtKth+/7KyMHTB36YgGxWxjosomJgbMJ4ujk4qCA8Z4eOKTo6fIhO4eSpqsJsxXErS5+w==",
+  "dgSpecHash": "GIQuDkapMggu+bdccl8DHtSwOrkmTsCWPZ3H0MayNe52Y+WmvT4/FesYscuIkq4IKuDYxj/J1Qti4qEJIdarxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

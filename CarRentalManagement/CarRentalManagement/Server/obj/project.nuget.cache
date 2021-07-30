@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YC8XjHaCaY5rNDVSddSEPr/But789DQX3tilw1i4jwEGjr6wDu5bmJ3JsaKN9YGXKdx/0vZVWOtJoi2yF101PQ==",
+  "dgSpecHash": "8ES1bvyNTJoIqvB5Qpz0R4h6PCVP5252N3JrTTJk6iwV/KjxWyiHreoO9a5IQQe4zBu/4wNtWu7mRdmSHgTz8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Server\\CarRentalManagement.Server.csproj",
+  "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Server\\CarRentalManagement.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Leonardo\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

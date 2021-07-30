@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj": {}
+    "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj": {
+    "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
         "projectName": "CarRentalManagement.Client",
-        "projectPath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
+        "projectPath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
         "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Client\\obj\\",
+        "outputPath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj": {
-                "projectPath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj"
+              "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj": {
+                "projectPath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj": {
+    "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj",
         "projectName": "CarRentalManagement.Shared",
-        "projectPath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj",
+        "projectPath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\CarRentalManagement.Shared.csproj",
         "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

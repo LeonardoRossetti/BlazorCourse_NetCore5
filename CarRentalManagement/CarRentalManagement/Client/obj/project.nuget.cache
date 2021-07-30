@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8tlqz+iH+Em0Xs/9DhEClgF/r2nlUyaUE4pRcGXInHdY1kkWXQHUHVoHtvaWF3OU5OKYir46xQntUsYj6zGI6w==",
+  "dgSpecHash": "mACFxtYy2236JuLiEIGDs14lIfEY1ini3JLPuMrOLhF2CWVNfnnTkXL6vWQJBmB+pli9r2KJmqWjJqgZeI9CnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
+  "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.8\\microsoft.aspnetcore.authorization.5.0.8.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.8\\microsoft.aspnetcore.components.5.0.8.nupkg.sha512",
