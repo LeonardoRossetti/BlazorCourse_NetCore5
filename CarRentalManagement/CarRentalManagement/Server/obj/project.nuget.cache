@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8ES1bvyNTJoIqvB5Qpz0R4h6PCVP5252N3JrTTJk6iwV/KjxWyiHreoO9a5IQQe4zBu/4wNtWu7mRdmSHgTz8w==",
+  "dgSpecHash": "WxMlH8klDKimI8CXu7Z1WStIb3yONg3MbhPvBaEnsS5QCyJMvQ0VojEm9lYaGNbhPKTlZj7ltyA9D4F5bBL7GQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Server\\CarRentalManagement.Server.csproj",
   "expectedPackageFiles": [

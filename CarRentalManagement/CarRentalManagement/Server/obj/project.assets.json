@@ -8488,6 +8488,7 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.8",
       "Microsoft.AspNetCore.Identity.UI >= 5.0.8",
+      "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
       "Microsoft.VisualStudio.Web.CodeGeneration >= 5.0.2",
@@ -8562,6 +8563,10 @@
             "version": "[5.0.8, )"
           },
           "Microsoft.AspNetCore.Identity.UI": {
+            "target": "Package",
+            "version": "[5.0.8, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.8, )"
           },
