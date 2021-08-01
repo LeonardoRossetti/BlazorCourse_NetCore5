@@ -13,40 +13,40 @@ namespace CarRentalManagement.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MakesController : ControllerBase
+    public class ColourController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public MakesController(IUnitOfWork unitOfWork)
+        public ColourController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetMakes()
+        public async Task<IActionResult> GetColours()
         {
-            var makes = await _unitOfWork.MakesRepository.GetAll();
-            return Ok(makes);
+            var colour = await _unitOfWork.ColourRepository.GetAll();
+            return Ok(colour);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetMake(int id)
+        public async Task<IActionResult> GetColour(int id)
         {
-            var make = await _unitOfWork.MakesRepository.Get(m => m.Id == id);
+            var colour = await _unitOfWork.ColourRepository.Get(m => m.Id == id);
 
-            if (make == null)
+            if (colour == null)
                 return NotFound();
 
-            return Ok(make);
+            return Ok(colour);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMake(int id, Make make)
+        public async Task<IActionResult> PutColour(int id, Colour colour)
         {
-            if (id != make.Id)
+            if (id != colour.Id)
                 return BadRequest();
 
-            _unitOfWork.MakesRepository.Update(make);
+            _unitOfWork.ColourRepository.Update(colour);
 
             try
             {
@@ -54,7 +54,7 @@ namespace CarRentalManagement.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (! await MakeExists(id))
+                if (!await ColourExists(id))
                     return NotFound();
                 else
                     throw;
@@ -63,30 +63,30 @@ namespace CarRentalManagement.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Make>> PostMake(Make make)
+        public async Task<ActionResult<Colour>> PostColour(Colour colour)
         {
-            await _unitOfWork.MakesRepository.Insert(make);
+            await _unitOfWork.ColourRepository.Insert(colour);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetMake", new { id = make.Id }, make);
+            return CreatedAtAction("GetColour", new { id = colour.Id }, colour);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMake(int id)
+        public async Task<IActionResult> DeleteColour(int id)
         {
-            if (! await MakeExists(id))
+            if (!await ColourExists(id))
                 return NotFound();
 
-            await _unitOfWork.MakesRepository.Delete(id);
+            await _unitOfWork.ColourRepository.Delete(id);
             await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
-        private async Task<bool> MakeExists(int id)
+        private async Task<bool> ColourExists(int id)
         {
-            var make = await _unitOfWork.MakesRepository.Get(m => m.Id == id);
-            return make != null;
+            var colour = await _unitOfWork.ColourRepository.Get(m => m.Id == id);
+            return colour != null;
         }
     }
 }

@@ -13,40 +13,40 @@ namespace CarRentalManagement.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MakesController : ControllerBase
+    public class VehicleController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public MakesController(IUnitOfWork unitOfWork)
+        public VehicleController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetMakes()
+        public async Task<IActionResult> GetVehicles()
         {
-            var makes = await _unitOfWork.MakesRepository.GetAll();
-            return Ok(makes);
+            var vehicle = await _unitOfWork.VehicleRepository.GetAll();
+            return Ok(vehicle);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetMake(int id)
+        public async Task<IActionResult> GetVehicle(int id)
         {
-            var make = await _unitOfWork.MakesRepository.Get(m => m.Id == id);
+            var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id);
 
-            if (make == null)
+            if (vehicle == null)
                 return NotFound();
 
-            return Ok(make);
+            return Ok(vehicle);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMake(int id, Make make)
+        public async Task<IActionResult> PutVehicle(int id, Vehicle vehicle)
         {
-            if (id != make.Id)
+            if (id != vehicle.Id)
                 return BadRequest();
 
-            _unitOfWork.MakesRepository.Update(make);
+            _unitOfWork.VehicleRepository.Update(vehicle);
 
             try
             {
@@ -54,7 +54,7 @@ namespace CarRentalManagement.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (! await MakeExists(id))
+                if (!await VehicleExists(id))
                     return NotFound();
                 else
                     throw;
@@ -63,30 +63,30 @@ namespace CarRentalManagement.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Make>> PostMake(Make make)
+        public async Task<ActionResult<Vehicle>> PostVehicle(Vehicle vehicle)
         {
-            await _unitOfWork.MakesRepository.Insert(make);
+            await _unitOfWork.VehicleRepository.Insert(vehicle);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetMake", new { id = make.Id }, make);
+            return CreatedAtAction("GetVehicle", new { id = vehicle.Id }, vehicle);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMake(int id)
+        public async Task<IActionResult> DeleteVehicle(int id)
         {
-            if (! await MakeExists(id))
+            if (!await VehicleExists(id))
                 return NotFound();
 
-            await _unitOfWork.MakesRepository.Delete(id);
+            await _unitOfWork.VehicleRepository.Delete(id);
             await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
-        private async Task<bool> MakeExists(int id)
+        private async Task<bool> VehicleExists(int id)
         {
-            var make = await _unitOfWork.MakesRepository.Get(m => m.Id == id);
-            return make != null;
+            var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id);
+            return vehicle != null;
         }
     }
 }

@@ -13,40 +13,40 @@ namespace CarRentalManagement.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MakesController : ControllerBase
+    public class ModelController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public MakesController(IUnitOfWork unitOfWork)
+        public ModelController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetMakes()
+        public async Task<IActionResult> GetModels()
         {
-            var makes = await _unitOfWork.MakesRepository.GetAll();
-            return Ok(makes);
+            var model = await _unitOfWork.ModelRepository.GetAll();
+            return Ok(model);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetMake(int id)
+        public async Task<IActionResult> GetModel(int id)
         {
-            var make = await _unitOfWork.MakesRepository.Get(m => m.Id == id);
+            var model = await _unitOfWork.ModelRepository.Get(m => m.Id == id);
 
-            if (make == null)
+            if (model == null)
                 return NotFound();
 
-            return Ok(make);
+            return Ok(model);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMake(int id, Make make)
+        public async Task<IActionResult> PutModel(int id, Model model)
         {
-            if (id != make.Id)
+            if (id != model.Id)
                 return BadRequest();
 
-            _unitOfWork.MakesRepository.Update(make);
+            _unitOfWork.ModelRepository.Update(model);
 
             try
             {
@@ -54,7 +54,7 @@ namespace CarRentalManagement.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (! await MakeExists(id))
+                if (!await ModelExists(id))
                     return NotFound();
                 else
                     throw;
@@ -63,30 +63,30 @@ namespace CarRentalManagement.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Make>> PostMake(Make make)
+        public async Task<ActionResult<Model>> PostModel(Model model)
         {
-            await _unitOfWork.MakesRepository.Insert(make);
+            await _unitOfWork.ModelRepository.Insert(model);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetMake", new { id = make.Id }, make);
+            return CreatedAtAction("GetModel", new { id = model.Id }, model);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMake(int id)
+        public async Task<IActionResult> DeleteModel(int id)
         {
-            if (! await MakeExists(id))
+            if (!await ModelExists(id))
                 return NotFound();
 
-            await _unitOfWork.MakesRepository.Delete(id);
+            await _unitOfWork.ModelRepository.Delete(id);
             await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
-        private async Task<bool> MakeExists(int id)
+        private async Task<bool> ModelExists(int id)
         {
-            var make = await _unitOfWork.MakesRepository.Get(m => m.Id == id);
-            return make != null;
+            var model = await _unitOfWork.ModelRepository.Get(m => m.Id == id);
+            return model != null;
         }
     }
 }

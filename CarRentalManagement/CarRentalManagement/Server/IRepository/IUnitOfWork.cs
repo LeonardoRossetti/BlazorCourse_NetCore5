@@ -1,4 +1,5 @@
 ﻿using CarRentalManagement.Shared.Domain;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace CarRentalManagement.Server.IRepository
 {
     public interface IUnitOfWork : IDisposable
     {
-        Task Save();
+        Task Save(HttpContext httpContext);
         IGenericRepository<Make> MakesRepository { get; }
         IGenericRepository<Model> ModelRepository { get; }
         IGenericRepository<Vehicle> VehicleRepository { get; }
