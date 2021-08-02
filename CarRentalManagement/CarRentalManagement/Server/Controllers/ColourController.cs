@@ -12,7 +12,7 @@ using CarRentalManagement.Server.IRepository;
 namespace CarRentalManagement.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ColourController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;

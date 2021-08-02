@@ -199,12 +199,12 @@
       "netstandard.dll": "sha256-vJpyW6cE\/+ewo5rVB5JUu9x2f8aLnqoIazac8ef5FzQ=",
       "System.Private.CoreLib.dll": "sha256-CvQTDivHJZAtRXyCbDa5f5+okJt39WRFrZSmXTMSau0=",
       "CarRentalManagement.Shared.dll": "sha256-bMXvOntcFNX6QOPbpz\/UuxvEPIdNDpRX9xJLiMZqWM4=",
-      "CarRentalManagement.Client.dll": "sha256-T\/HMbQiVILnAW53kbhuPtkZwSMxQiEoY87hCuKTCWpU="
+      "CarRentalManagement.Client.dll": "sha256-BgXmo4ZYySIfuAOeUYZ3TGbblSekb3vm+A\/NcyY+t6g="
     },
     "lazyAssembly": null,
     "pdb": {
       "CarRentalManagement.Shared.pdb": "sha256-W8BdM76ZuAJdLdWU6jFgsXwmcm4R1XjUsNm2tta00rs=",
-      "CarRentalManagement.Client.pdb": "sha256-3du2JoUebrbbUw\/PKbW2NnNhzfHhyrIl4dt+1qRCV1w="
+      "CarRentalManagement.Client.pdb": "sha256-6vAt6K5acSunH2Pi1BulSKodkwUfsFuDoq6a2B6l75I="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-2OdnPsDgJyoSaSlvebGMRd2MxC+4UIqparqVrQZAFDE=",
