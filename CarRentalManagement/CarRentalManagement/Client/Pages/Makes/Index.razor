@@ -1,6 +1,7 @@
 ﻿@page "/makes/"
 @inject HttpClient _client
 @inject IJSRuntime js
+@attribute [Authorize]
 
 <h3 class="card-title">Car Makes</h3>
 <hr />
@@ -46,7 +47,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
-        Model = await _client.GetFromJsonAsync<List<Make>>("api/makes");
+        Model = await _client.GetFromJsonAsync<List<Make>>(Endpoints.Makes);
     }
 
     async Task Delete(int id)
@@ -57,7 +58,7 @@ else
 
         if (confirm)
         {
-            await _client.DeleteAsync($"api/makes/{id}");
+            await _client.DeleteAsync($"{Endpoints.Makes}/{id}");
             await OnInitializedAsync();
         }
     }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -19,14 +19,6 @@
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Models\" />
-    <Folder Include="Pages\Customers\" />
-    <Folder Include="Pages\Colours\" />
-    <Folder Include="Pages\Bookings\" />
-    <Folder Include="Pages\Vehicles\" />
   </ItemGroup>
 
 </Project>

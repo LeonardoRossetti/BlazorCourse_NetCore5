@@ -1,0 +1,66 @@
+﻿@page "/models/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="card-title">Models</h3>
+<hr />
+<br />
+@if (Model == null)
+{
+    <div class="alert alert-info">Loading Models...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var model in Model)
+            {
+                <tr>
+                    <td>@model.Name</td>
+                    <td>
+                        <a href="/makes/view/@model.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/makes/edit/@model.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="() => Delete(model.Id)">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private List<Model> Model;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Model = await _client.GetFromJsonAsync<List<Model>>(Endpoints.Models);
+    }
+
+    async Task Delete(int id)
+    {
+        var model = Model.First(m => m.Id == id);
+
+        var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {model.Name}?");
+
+        if (confirm)
+        {
+            await _client.DeleteAsync($"{Endpoints.Models}/{id}");
+            await OnInitializedAsync();
+        }
+    }
+
+}
