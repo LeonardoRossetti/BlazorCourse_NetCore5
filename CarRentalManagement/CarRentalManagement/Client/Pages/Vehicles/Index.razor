@@ -4,15 +4,22 @@
 @attribute [Authorize]
 
 <h3 class="card-title">Vehicles</h3>
+
+<a href="/vehicles/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Vehicle
+</a>
+
 <hr />
 <br />
+
 @if (Model == null)
 {
     <div class="alert alert-info">Loading Vehicles...</div>
 }
 else
 {
-    <table class="table table-responsive">
+    <table class="table">
         <thead>
             <tr>
                 <th>Make</th>

@@ -1,0 +1,65 @@
+﻿@page "/bookings/create"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3 class="card-title">Create New Bookings</h3>
+<hr />
+<br />
+<EditForm Model="Booking" OnValidSubmit="CreateBookings">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Vehicle: </label>
+        <div>
+            <InputSelect @bind-Value="Booking.VehicleId" class="form-control">
+                <option value="">Select Vehicle</option>
+                @if (Vehicles != null)
+                {
+                    foreach (var vehicle in Vehicles)
+                    {
+                        <option value="@vehicle.Id">@vehicle.Model.Name</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="() => Booking.VehicleId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Customer: </label>
+        <div>
+            <InputSelect @bind-Value="Booking.CustomerId" class="form-control">
+                <option value="">Select customer</option>
+                @if (Customers != null)
+                {
+                    foreach (var customer in Customers)
+                    {
+                        <option value="@customer.Id">@customer.TaxId</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="() => Booking.CustomerId" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Create Booking</button>
+</EditForm>
+
+
+@code {
+    Booking Booking = new Booking();
+    private IList<Vehicle> Vehicles;
+    private IList<Customer> Customers;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{Endpoints.Vehicles}");
+        Customers = await _client.GetFromJsonAsync<List<Customer>>(Endpoints.Customers);
+    }
+
+    private async Task CreateBookings()
+    {
+        await _client.PostAsJsonAsync(Endpoints.Bookings, Booking);
+        _navManager.NavigateTo("/bookings/");
+    }
+
+}

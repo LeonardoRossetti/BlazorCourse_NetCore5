@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mACFxtYy2236JuLiEIGDs14lIfEY1ini3JLPuMrOLhF2CWVNfnnTkXL6vWQJBmB+pli9r2KJmqWjJqgZeI9CnQ==",
+  "dgSpecHash": "D01NZh9xu6Y6kphWaUig9ykZNMVPh1woo5yqcQ36K0/qbcVLGGzcJDywn968Tjxkf5oA/2HstNm+Vr2Jpd4U2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Client\\CarRentalManagement.Client.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.8\\microsoft.jsinterop.webassembly.5.0.8.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.8\\microsoft.netcore.app.runtime.browser-wasm.5.0.8.nupkg.sha512"
+    "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.9\\microsoft.netcore.app.runtime.browser-wasm.5.0.9.nupkg.sha512"
   ],
   "logs": []
 }
