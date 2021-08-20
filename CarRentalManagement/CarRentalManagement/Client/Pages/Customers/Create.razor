@@ -10,7 +10,7 @@
     <ValidationSummary />
 
     <div class="form-group">
-        <label>Tax Id: </label>
+        <label>Tax Identification Number: </label>
         <div>
             <InputText @bind-Value="Customer.TaxId" class="form-control" />
             <ValidationMessage For="() => Customer.TaxId" />
@@ -19,7 +19,7 @@
     <div class="form-group">
         <label>Address: </label>
         <div>
-            <InputText @bind-Value="Customer.Address" class="form-control" />
+            <InputTextArea @bind-Value="Customer.Address" class="form-control" />
             <ValidationMessage For="() => Customer.Address" />
         </div>
     </div>

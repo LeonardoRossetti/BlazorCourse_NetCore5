@@ -45,7 +45,10 @@ namespace CarRentalManagement.Server
 
             services.AddTransient<IUnitOfWork, UnitOfWork>(); // this prepare it for dependency injection
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(op => op.SerializerSettings.ReferenceLoopHandling = 
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddRazorPages();
         }
 

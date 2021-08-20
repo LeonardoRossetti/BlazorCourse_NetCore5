@@ -133,19 +133,19 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\Create.razor"
+#line 55 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\Create.razor"
        
-    Booking Booking = new Booking();
+    Booking Booking = new Booking()
+    {
+        DateOut = DateTime.Now.Date
+    };
     private IList<Vehicle> Vehicles;
     private IList<Customer> Customers;
 
     protected async override Task OnInitializedAsync()
     {
         Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{Endpoints.Vehicles}");
-        Console.WriteLine("AAAAAAAAAAa");
-        Console.WriteLine(Vehicles.Count);
         Customers = await _client.GetFromJsonAsync<List<Customer>>(Endpoints.Customers);
-        Console.WriteLine(Customers.Count);
     }
 
     private async Task CreateBookings()

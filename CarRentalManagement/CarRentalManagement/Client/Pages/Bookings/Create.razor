@@ -18,7 +18,7 @@
                 {
                     foreach (var vehicle in Vehicles)
                     {
-                        <option value="@vehicle.Id">@vehicle.Model.Name</option>
+                        <option value="@vehicle.Id">@vehicle.Make.Name @vehicle.Model.Name | @vehicle.LicensePlateNumber</option>
                     }
                 }
             </InputSelect>
@@ -34,11 +34,18 @@
                 {
                     foreach (var customer in Customers)
                     {
-                        <option value="@customer.Id">@customer.TaxId</option>
+                        <option value="@customer.Id">@customer.TaxId | @customer.EmailAddress</option>
                     }
                 }
             </InputSelect>
             <ValidationMessage For="() => Booking.CustomerId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date Out: </label>
+        <div>
+            <InputDate @bind-Value="Booking.DateOut" class="form-control" />
+            <ValidationMessage For="() => Booking.DateOut" />
         </div>
     </div>
     <button type="submit" class="btn btn-success btn-block">Create Booking</button>
@@ -46,7 +53,10 @@
 
 
 @code {
-    Booking Booking = new Booking();
+    Booking Booking = new Booking()
+    {
+        DateOut = DateTime.Now.Date
+    };
     private IList<Vehicle> Vehicles;
     private IList<Customer> Customers;
 

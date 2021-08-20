@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hnRR1Pd2OW/8TU7eVlLmoNyA4a651uEtkcHKT0AMQ4nMqrhn7z5BxNvGpEFonjvOthFuUyBHoCgfV/FlPZvF+A==",
+  "dgSpecHash": "AZDc4pan2qX0zqbKFfVYTVf/JaQ8F1zsjE1DvcRp/Nnpj8k9ku3Um7glUk97ds6L1dpIMNk5ViT2Z86qkZPMCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Server\\CarRentalManagement.Server.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,9 @@
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.8\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.8.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.8\\microsoft.aspnetcore.identity.ui.5.0.8.nupkg.sha512",
+    "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.9\\microsoft.aspnetcore.jsonpatch.5.0.9.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.8\\microsoft.aspnetcore.metadata.5.0.8.nupkg.sha512",
+    "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.9\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.9.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -92,6 +94,7 @@
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Leonardo\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

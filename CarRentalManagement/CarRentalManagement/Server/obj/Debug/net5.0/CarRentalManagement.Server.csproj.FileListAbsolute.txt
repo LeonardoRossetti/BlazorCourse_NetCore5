@@ -468,3 +468,6 @@ C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalMana
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Server\obj\Debug\net5.0\Razor\Views\Makes\Edit.cshtml.g.cs
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Server\obj\Debug\net5.0\Razor\Views\Makes\Index.cshtml.g.cs
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Server\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Server\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Server\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
