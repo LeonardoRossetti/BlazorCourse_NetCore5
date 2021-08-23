@@ -125,13 +125,19 @@ using CarRentalManagement.Shared.Domain;
 #line hidden
 #nullable disable
 #nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\Index.razor"
+           [Route("/" + PagePath.Vehicles)]
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\Index.razor"
            [Authorize]
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/vehicles/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -146,7 +152,7 @@ using CarRentalManagement.Shared.Domain;
 
     protected async override Task OnInitializedAsync()
     {
-        Model = await _client.GetFromJsonAsync<List<Vehicle>>(Endpoints.Vehicles);
+        Model = await _client.GetFromJsonAsync<List<Vehicle>>(ApiEndpoints.Vehicles);
     }
 
     async Task Delete(int id)
@@ -157,7 +163,7 @@ using CarRentalManagement.Shared.Domain;
 
         if (confirm)
         {
-            await _client.DeleteAsync($"{Endpoints.Vehicles}/{id}");
+            await _client.DeleteAsync($"{ApiEndpoints.Vehicles}/{id}");
             await OnInitializedAsync();
         }
     }

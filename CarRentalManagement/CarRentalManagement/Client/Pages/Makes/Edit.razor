@@ -1,0 +1,22 @@
+﻿@attribute [Route("/" + PagePath.Makes + "/edit/{id:int}")]
+
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditMake" Make="Make" Title="Edit" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Make Make = new Make();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Make = await _client.GetFromJsonAsync<Make>($"{ApiEndpoints.Makes}/{id}");
+    }
+
+    async Task EditMake()
+    {
+        await _client.PutAsJsonAsync($"{ApiEndpoints.Makes}/{id}", Make);
+        _navManager.NavigateTo(PagePath.Makes);
+    }
+}

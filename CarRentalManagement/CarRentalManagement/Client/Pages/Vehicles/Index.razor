@@ -1,11 +1,11 @@
-﻿@page "/vehicles/"
+﻿@attribute [Route("/" + PagePath.Vehicles)]
 @inject HttpClient _client
 @inject IJSRuntime js
 @attribute [Authorize]
 
 <h3 class="card-title">Vehicles</h3>
 
-<a href="/vehicles/create" class="btn btn-secondary">
+<a href="@PagePath.Vehicles/create" class="btn btn-secondary">
     <span class="oi oi-plus"></span>
     Create New Vehicle
 </a>
@@ -38,10 +38,10 @@ else
                     <td>@vehicle.Year</td>
                     <td>@vehicle.RentalRate</td>
                     <td>
-                        <a href="/makes/view/@vehicle.Id" class="btn btn-primary">
+                        <a href="@PagePath.Vehicles/view/@vehicle.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/makes/edit/@vehicle.Id" class="btn btn-warning">
+                        <a href="@PagePath.Vehicles/edit/@vehicle.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="() => Delete(vehicle.Id)">
@@ -60,7 +60,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
-        Model = await _client.GetFromJsonAsync<List<Vehicle>>(Endpoints.Vehicles);
+        Model = await _client.GetFromJsonAsync<List<Vehicle>>(ApiEndpoints.Vehicles);
     }
 
     async Task Delete(int id)
@@ -71,7 +71,7 @@ else
 
         if (confirm)
         {
-            await _client.DeleteAsync($"{Endpoints.Vehicles}/{id}");
+            await _client.DeleteAsync($"{ApiEndpoints.Vehicles}/{id}");
             await OnInitializedAsync();
         }
     }

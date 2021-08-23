@@ -1,0 +1,22 @@
+﻿@attribute [Route("/" + PagePath.Colours + "/edit/{id:int}")]
+
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<FormComponent ButtonText="Create Colour" OnValidSubmit="EditColor" Title="Create New Colour" Colour="Colour" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Colour Colour = new Colour();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Colour = await _client.GetFromJsonAsync<Colour>($"{ApiEndpoints.Colours}/{id}");
+    }
+
+    async Task EditColor()
+    {
+        await _client.PutAsJsonAsync($"{ApiEndpoints.Colours}/{id}", Colour);
+        _navManager.NavigateTo(PagePath.Colours);
+    }
+}

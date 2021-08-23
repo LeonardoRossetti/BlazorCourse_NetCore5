@@ -1,11 +1,11 @@
-﻿@page "/bookings/"
+﻿@attribute [Route("/" + PagePath.Bookings)]
 @inject HttpClient _client
 @inject IJSRuntime js
 @attribute [Authorize]
 
 <h3 class="card-title">Bookings</h3>
 
-<a href="/bookings/create" class="btn btn-secondary">
+<a href="@PagePath.Bookings/create" class="btn btn-secondary">
     <span class="oi oi-plus"></span>
     Create New Booking
 </a>
@@ -35,10 +35,10 @@ else
                     <td>@booking.DateCreated.Date.ToString("dd MMMM yyyy")</td>
                     <td>@((booking.DateIn - booking.DateOut).TotalDays.ToString())</td>
                     <td>
-                        <a href="/makes/view/@booking.Id" class="btn btn-primary">
+                        <a href="@PagePath.Bookings/view/@booking.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/makes/edit/@booking.Id" class="btn btn-warning">
+                        <a href="@PagePath.Bookings/edit/@booking.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="() => Delete(booking.Id)">
@@ -57,7 +57,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
-        Model = await _client.GetFromJsonAsync<List<Booking>>(Endpoints.Bookings);
+        Model = await _client.GetFromJsonAsync<List<Booking>>(ApiEndpoints.Bookings);
     }
 
     async Task Delete(int id)
@@ -68,7 +68,7 @@ else
 
         if (confirm)
         {
-            await _client.DeleteAsync($"{Endpoints.Bookings}/{id}");
+            await _client.DeleteAsync($"{ApiEndpoints.Bookings}/{id}");
             await OnInitializedAsync();
         }
     }

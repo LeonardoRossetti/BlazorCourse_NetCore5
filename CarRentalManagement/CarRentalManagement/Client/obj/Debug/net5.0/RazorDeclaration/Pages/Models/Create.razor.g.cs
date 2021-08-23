@@ -124,7 +124,13 @@ using CarRentalManagement.Shared.Domain;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/models/create")]
+#nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Models\Create.razor"
+           [Route("/" + PagePath.Models + "/create")]
+
+#line default
+#line hidden
+#nullable disable
     public partial class Create : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -133,7 +139,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Models\Create.razor"
+#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Models\Create.razor"
        
     Model Model = new Model();
 
@@ -143,8 +149,8 @@ using CarRentalManagement.Shared.Domain;
 
     private async Task CreateModel()
     {
-        await _client.PostAsJsonAsync(Endpoints.Models, Model);
-        _navManager.NavigateTo("/models/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Models, Model);
+        _navManager.NavigateTo(PagePath.Models);
     }
 
 

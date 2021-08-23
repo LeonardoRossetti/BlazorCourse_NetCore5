@@ -1,75 +1,28 @@
-﻿@page "/bookings/create"
+﻿@attribute [Route("/" + PagePath.Bookings + "/create")]
 @inject HttpClient _client
 @inject NavigationManager _navManager
 
-<h3 class="card-title">Create New Bookings</h3>
-<hr />
-<br />
-<EditForm Model="Booking" OnValidSubmit="CreateBookings">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="form-group">
-        <label>Vehicle: </label>
-        <div>
-            <InputSelect @bind-Value="Booking.VehicleId" class="form-control">
-                <option value="">Select Vehicle</option>
-                @if (Vehicles != null)
-                {
-                    foreach (var vehicle in Vehicles)
-                    {
-                        <option value="@vehicle.Id">@vehicle.Make.Name @vehicle.Model.Name | @vehicle.LicensePlateNumber</option>
-                    }
-                }
-            </InputSelect>
-            <ValidationMessage For="() => Booking.VehicleId" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Customer: </label>
-        <div>
-            <InputSelect @bind-Value="Booking.CustomerId" class="form-control">
-                <option value="">Select customer</option>
-                @if (Customers != null)
-                {
-                    foreach (var customer in Customers)
-                    {
-                        <option value="@customer.Id">@customer.TaxId | @customer.EmailAddress</option>
-                    }
-                }
-            </InputSelect>
-            <ValidationMessage For="() => Booking.CustomerId" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Date Out: </label>
-        <div>
-            <InputDate @bind-Value="Booking.DateOut" class="form-control" />
-            <ValidationMessage For="() => Booking.DateOut" />
-        </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-block">Create Booking</button>
-</EditForm>
-
+<FormComponent Booking="Booking" ButtonText="Create Booking" Title="Create New Booking" Vehicles="Vehicles" Customers="Customers" OnValidSubmit="CreateBookings" />
 
 @code {
     Booking Booking = new Booking()
     {
-        DateOut = DateTime.Now.Date
+        DateOut = DateTime.Now.Date,
+        DateIn = DateTime.Now.Date
     };
-    private IList<Vehicle> Vehicles;
-    private IList<Customer> Customers;
+    private List<Vehicle> Vehicles;
+    private List<Customer> Customers;
 
     protected async override Task OnInitializedAsync()
     {
-        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{Endpoints.Vehicles}");
-        Customers = await _client.GetFromJsonAsync<List<Customer>>(Endpoints.Customers);
+        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{ApiEndpoints.Vehicles}");
+        Customers = await _client.GetFromJsonAsync<List<Customer>>(ApiEndpoints.Customers);
     }
 
     private async Task CreateBookings()
     {
-        await _client.PostAsJsonAsync(Endpoints.Bookings, Booking);
-        _navManager.NavigateTo("/bookings/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Bookings, Booking);
+        _navManager.NavigateTo(PagePath.Bookings);
     }
 
 }

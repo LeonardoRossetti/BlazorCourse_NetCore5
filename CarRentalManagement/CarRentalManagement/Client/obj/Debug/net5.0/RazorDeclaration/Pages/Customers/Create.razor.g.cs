@@ -124,7 +124,13 @@ using CarRentalManagement.Shared.Domain;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/customers/create")]
+#nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Customers\Create.razor"
+           [Route("/" + PagePath.Customers + "/create")]
+
+#line default
+#line hidden
+#nullable disable
     public partial class Create : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -133,7 +139,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Customers\Create.razor"
+#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Customers\Create.razor"
        
     Customer Customer = new Customer();
 
@@ -143,8 +149,8 @@ using CarRentalManagement.Shared.Domain;
 
     private async Task CreateCustomer()
     {
-        await _client.PostAsJsonAsync(Endpoints.Customers, Customer);
-        _navManager.NavigateTo("/customers/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Customers, Customer);
+        _navManager.NavigateTo(PagePath.Customers);
     }
 
 

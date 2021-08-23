@@ -1,0 +1,22 @@
+﻿@attribute [Route("/" + PagePath.Customers + "/edit/{id:int}")]
+
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditCustomer" Customer="Customer" Title="Edit" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Customer Customer = new Customer();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Customer = await _client.GetFromJsonAsync<Customer>($"{ApiEndpoints.Customers}/{id}");
+    }
+
+    async Task EditCustomer()
+    {
+        await _client.PutAsJsonAsync($"{ApiEndpoints.Customers}/{id}", Customer);
+        _navManager.NavigateTo(PagePath.Customers);
+    }
+}

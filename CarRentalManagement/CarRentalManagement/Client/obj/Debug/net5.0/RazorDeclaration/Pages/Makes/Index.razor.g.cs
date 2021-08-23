@@ -125,13 +125,19 @@ using CarRentalManagement.Shared.Domain;
 #line hidden
 #nullable disable
 #nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Makes\Index.razor"
+           [Route("/" + PagePath.Makes)]
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Makes\Index.razor"
            [Authorize]
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/makes/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -146,7 +152,7 @@ using CarRentalManagement.Shared.Domain;
 
     protected async override Task OnInitializedAsync()
     {
-        Model = await _client.GetFromJsonAsync<List<Make>>(Endpoints.Makes);
+        Model = await _client.GetFromJsonAsync<List<Make>>(ApiEndpoints.Makes);
     }
 
     async Task Delete(int id)
@@ -157,7 +163,7 @@ using CarRentalManagement.Shared.Domain;
 
         if (confirm)
         {
-            await _client.DeleteAsync($"{Endpoints.Makes}/{id}");
+            await _client.DeleteAsync($"{ApiEndpoints.Makes}/{id}");
             await OnInitializedAsync();
         }
     }

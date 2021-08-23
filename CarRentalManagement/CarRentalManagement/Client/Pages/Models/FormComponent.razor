@@ -1,0 +1,24 @@
+﻿<h3 class="card-title">@Title</h3>
+<hr />
+<br />
+
+<EditForm Model="Model" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Model name: </label>
+        <div>
+            <InputText @bind-Value="Model.Name" class="form-control" />
+            <ValidationMessage For="() => Model.Name" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+</EditForm>
+
+@code {
+    [Parameter] public Model Model { get; set; }
+    [Parameter] public string Title { get; set; } = "Form";
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}

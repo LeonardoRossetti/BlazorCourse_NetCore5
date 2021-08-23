@@ -124,7 +124,13 @@ using CarRentalManagement.Shared.Domain;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/bookings/create")]
+#nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\Create.razor"
+           [Route("/" + PagePath.Bookings + "/create")]
+
+#line default
+#line hidden
+#nullable disable
     public partial class Create : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -133,25 +139,26 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 55 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\Create.razor"
+#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\Create.razor"
        
     Booking Booking = new Booking()
     {
-        DateOut = DateTime.Now.Date
+        DateOut = DateTime.Now.Date,
+        DateIn = DateTime.Now.Date
     };
-    private IList<Vehicle> Vehicles;
-    private IList<Customer> Customers;
+    private List<Vehicle> Vehicles;
+    private List<Customer> Customers;
 
     protected async override Task OnInitializedAsync()
     {
-        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{Endpoints.Vehicles}");
-        Customers = await _client.GetFromJsonAsync<List<Customer>>(Endpoints.Customers);
+        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{ApiEndpoints.Vehicles}");
+        Customers = await _client.GetFromJsonAsync<List<Customer>>(ApiEndpoints.Customers);
     }
 
     private async Task CreateBookings()
     {
-        await _client.PostAsJsonAsync(Endpoints.Bookings, Booking);
-        _navManager.NavigateTo("/bookings/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Bookings, Booking);
+        _navManager.NavigateTo(PagePath.Bookings);
     }
 
 

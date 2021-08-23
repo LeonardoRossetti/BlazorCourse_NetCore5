@@ -1,24 +1,8 @@
-﻿@page "/colours/create"
+﻿@attribute [Route("/" + PagePath.Colours + "/create")]
 @inject HttpClient _client
 @inject NavigationManager _navManager
 
-<h3 class="card-title">Create New Colours</h3>
-<hr />
-<br />
-<EditForm Model="Colour" OnValidSubmit="CreateColours">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="form-group">
-        <label>Name: </label>
-        <div>
-            <InputText @bind-Value="Colour.Name" class="form-control" />
-            <ValidationMessage For="() => Colour.Name" />
-        </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-block">Create Colour</button>
-</EditForm>
-
+<FormComponent ButtonText="Create Colour" OnValidSubmit="CreateColours" Title="Create New Colour" Colour="Colour" />
 
 @code {
     Colour Colour = new Colour();
@@ -29,8 +13,8 @@
 
     private async Task CreateColours()
     {
-        await _client.PostAsJsonAsync(Endpoints.Colours, Colour);
-        _navManager.NavigateTo("/colours/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Colours, Colour);
+        _navManager.NavigateTo(PagePath.Colours);
     }
 
 }

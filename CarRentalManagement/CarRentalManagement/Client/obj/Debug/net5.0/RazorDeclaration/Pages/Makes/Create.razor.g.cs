@@ -124,7 +124,13 @@ using CarRentalManagement.Shared.Domain;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/makes/create")]
+#nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Makes\Create.razor"
+           [Route("/" + PagePath.Makes + "/create")]
+
+#line default
+#line hidden
+#nullable disable
     public partial class Create : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -133,7 +139,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Makes\Create.razor"
+#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Makes\Create.razor"
        
     Make Make = new Make();
 
@@ -143,8 +149,8 @@ using CarRentalManagement.Shared.Domain;
 
     private async Task CreateMake()
     {
-        await _client.PostAsJsonAsync(Endpoints.Makes, Make);
-        _navManager.NavigateTo("/makes/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Makes, Make);
+        _navManager.NavigateTo(PagePath.Makes);
     }
 
 

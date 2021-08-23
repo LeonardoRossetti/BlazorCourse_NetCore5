@@ -1,0 +1,65 @@
+﻿<h3 class="card-title">@Title</h3>
+<hr />
+<br />
+
+<EditForm Model="Booking" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Vehicle: </label>
+        <div>
+            <InputSelect @bind-Value="Booking.VehicleId" class="form-control">
+                <option value="">Select Vehicle</option>
+                @if (Vehicles != null)
+                {
+                    foreach (var vehicle in Vehicles)
+                    {
+                        <option value="@vehicle.Id">@vehicle.Make.Name @vehicle.Model.Name | @vehicle.LicensePlateNumber</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="() => Booking.VehicleId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Customer: </label>
+        <div>
+            <InputSelect @bind-Value="Booking.CustomerId" class="form-control">
+                <option value="">Select customer</option>
+                @if (Customers != null)
+                {
+                    foreach (var customer in Customers)
+                    {
+                        <option value="@customer.Id">@customer.TaxId | @customer.EmailAddress</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="() => Booking.CustomerId" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date Out: </label>
+        <div>
+            <InputDate @bind-Value="Booking.DateOut" class="form-control" />
+            <ValidationMessage For="() => Booking.DateOut" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date In: </label>
+        <div>
+            <InputDate @bind-Value="Booking.DateIn" class="form-control" />
+            <ValidationMessage For="() => Booking.DateIn" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+</EditForm>
+
+@code {
+    [Parameter] public Booking Booking { get; set; }
+    [Parameter] public List<Vehicle> Vehicles { get; set; }
+    [Parameter] public List<Customer> Customers { get; set; }
+    [Parameter] public string Title { get; set; } = "Form";
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}

@@ -1,24 +1,8 @@
-﻿@page "/models/create"
+﻿@attribute [Route("/" + PagePath.Models + "/create")]
 @inject HttpClient _client
 @inject NavigationManager _navManager
 
-<h3 class="card-title">Create New Model</h3>
-<hr />
-<br />
-<EditForm Model="Model" OnValidSubmit="CreateModel">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="form-group">
-        <label>Model name: </label>
-        <div>
-            <InputText @bind-Value="Model.Name"  class="form-control"/>
-            <ValidationMessage For="() => Model.Name" />
-        </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-block">Create Model</button>
-</EditForm>
-
+<FormComponent ButtonText="Create Model" Model="Model" OnValidSubmit="CreateModel" Title="Create New Model" />
 
 @code {
     Model Model = new Model();
@@ -29,8 +13,8 @@
 
     private async Task CreateModel()
     {
-        await _client.PostAsJsonAsync(Endpoints.Models, Model);
-        _navManager.NavigateTo("/models/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Models, Model);
+        _navManager.NavigateTo(PagePath.Models);
     }
 
 }

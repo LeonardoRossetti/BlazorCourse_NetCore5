@@ -124,7 +124,13 @@ using CarRentalManagement.Shared.Domain;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/vehicles/create")]
+#nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\Create.razor"
+           [Route("/" + PagePath.Vehicles + "/create")]
+
+#line default
+#line hidden
+#nullable disable
     public partial class Create : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -133,24 +139,24 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 93 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\Create.razor"
+#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\Create.razor"
        
     Vehicle Vehicle = new Vehicle();
-    private IList<Make> Makes;
-    private IList<Model> Models;
-    private IList<Colour> Colors;
+    private List<Make> Makes;
+    private List<Model> Models;
+    private List<Colour> Colors;
 
     protected async override Task OnInitializedAsync()
     {
-        Makes = await _client.GetFromJsonAsync<List<Make>>($"{Endpoints.Makes}");
-        Models = await _client.GetFromJsonAsync<List<Model>>($"{Endpoints.Models}");
-        Colors = await _client.GetFromJsonAsync<List<Colour>>($"{Endpoints.Colours}");
+        Makes = await _client.GetFromJsonAsync<List<Make>>($"{ApiEndpoints.Makes}");
+        Models = await _client.GetFromJsonAsync<List<Model>>($"{ApiEndpoints.Models}");
+        Colors = await _client.GetFromJsonAsync<List<Colour>>($"{ApiEndpoints.Colours}");
     }
 
     private async Task CreateVehicle()
     {
-        await _client.PostAsJsonAsync(Endpoints.Vehicles, Vehicle);
-        _navManager.NavigateTo("/vehicles/");
+        await _client.PostAsJsonAsync(ApiEndpoints.Vehicles, Vehicle);
+        _navManager.NavigateTo(PagePath.Vehicles);
     }
 
 
