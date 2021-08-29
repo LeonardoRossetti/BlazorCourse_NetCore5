@@ -203,7 +203,6 @@
     },
     "lazyAssembly": null,
     "pdb": {
-      "CarRentalManagement.Shared.pdb": "sha256-DyiYuzmzhowC7HfxZBa8\/jFp78RTy\/UT2KdmOhBwM8E=",
       "CarRentalManagement.Client.pdb": "sha256-DQN2yrDmM05uiZAB7WJW+rbYa3NEyrDAW4LxHfk\/QFo="
     },
     "runtime": {
