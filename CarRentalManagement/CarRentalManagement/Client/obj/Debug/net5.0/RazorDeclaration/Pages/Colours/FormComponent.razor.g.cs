@@ -132,7 +132,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 19 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\FormComponent.razor"
+#line 20 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\FormComponent.razor"
        
     [Parameter] public Colour Colour { get; set; }
     [Parameter] public string Title { get; set; } = "Form";

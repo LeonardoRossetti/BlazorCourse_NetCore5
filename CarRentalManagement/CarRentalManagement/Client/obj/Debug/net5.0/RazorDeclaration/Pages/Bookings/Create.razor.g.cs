@@ -143,18 +143,9 @@ using CarRentalManagement.Shared.Domain;
        
     Booking Booking = new Booking()
     {
-        DateOut = DateTime.Now.Date,
-        DateIn = DateTime.Now.Date
+        DateOut = DateTime.Now.Date
     };
-    private List<Vehicle> Vehicles;
-    private List<Customer> Customers;
-
-    protected async override Task OnInitializedAsync()
-    {
-        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{ApiEndpoints.Vehicles}");
-        Customers = await _client.GetFromJsonAsync<List<Customer>>(ApiEndpoints.Customers);
-    }
-
+   
     private async Task CreateBookings()
     {
         await _client.PostAsJsonAsync(ApiEndpoints.Bookings, Booking);

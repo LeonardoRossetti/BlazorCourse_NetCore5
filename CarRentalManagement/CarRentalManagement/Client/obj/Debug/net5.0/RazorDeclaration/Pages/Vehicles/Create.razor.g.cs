@@ -142,17 +142,7 @@ using CarRentalManagement.Shared.Domain;
 #line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\Create.razor"
        
     Vehicle Vehicle = new Vehicle();
-    private List<Make> Makes;
-    private List<Model> Models;
-    private List<Colour> Colors;
-
-    protected async override Task OnInitializedAsync()
-    {
-        Makes = await _client.GetFromJsonAsync<List<Make>>($"{ApiEndpoints.Makes}");
-        Models = await _client.GetFromJsonAsync<List<Model>>($"{ApiEndpoints.Models}");
-        Colors = await _client.GetFromJsonAsync<List<Colour>>($"{ApiEndpoints.Colours}");
-    }
-
+    
     private async Task CreateVehicle()
     {
         await _client.PostAsJsonAsync(ApiEndpoints.Vehicles, Vehicle);

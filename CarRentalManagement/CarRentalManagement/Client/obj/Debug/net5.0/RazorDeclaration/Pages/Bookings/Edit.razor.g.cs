@@ -144,14 +144,9 @@ using CarRentalManagement.Shared.Domain;
     [Parameter] public int id { get; set; }
     Booking Booking = new Booking();
 
-    private List<Vehicle> Vehicles;
-    private List<Customer> Customers;
-
     protected async override Task OnParametersSetAsync()
     {
         Booking = await _client.GetFromJsonAsync<Booking>($"{ApiEndpoints.Bookings}/{id}");
-        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{ApiEndpoints.Vehicles}");
-        Customers = await _client.GetFromJsonAsync<List<Customer>>(ApiEndpoints.Customers);
     }
 
     async Task EditBooking()

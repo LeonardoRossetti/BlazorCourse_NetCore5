@@ -1,4 +1,6 @@
-﻿<h3 class="card-title">@Title</h3>
+﻿@inject HttpClient _client
+
+<h3 class="card-title">@Title</h3>
 <hr />
 <br />
 
@@ -84,14 +86,23 @@
         </div>
     </div>
     <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+    <BackToList Target="@PagePath.Makes" />
 </EditForm>
 
 @code {
     [Parameter] public Vehicle Vehicle { get; set; }
-    [Parameter] public List<Make> Makes { get; set; }
-    [Parameter] public List<Model> Models { get; set; }
-    [Parameter] public List<Colour> Colors { get; set; }
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    private List<Make> Makes;
+    private List<Model> Models;
+    private List<Colour> Colors;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Makes = await _client.GetFromJsonAsync<List<Make>>($"{ApiEndpoints.Makes}");
+        Models = await _client.GetFromJsonAsync<List<Model>>($"{ApiEndpoints.Models}");
+        Colors = await _client.GetFromJsonAsync<List<Colour>>($"{ApiEndpoints.Colours}");
+    }
 }

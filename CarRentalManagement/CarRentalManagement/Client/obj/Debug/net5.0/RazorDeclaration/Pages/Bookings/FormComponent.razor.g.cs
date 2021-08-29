@@ -132,18 +132,27 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\FormComponent.razor"
+#line 64 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\FormComponent.razor"
        
     [Parameter] public Booking Booking { get; set; }
-    [Parameter] public List<Vehicle> Vehicles { get; set; }
-    [Parameter] public List<Customer> Customers { get; set; }
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
+    private List<Vehicle> Vehicles;
+    private List<Customer> Customers;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Vehicles = await _client.GetFromJsonAsync<List<Vehicle>>($"{ApiEndpoints.Vehicles}");
+        Customers = await _client.GetFromJsonAsync<List<Customer>>(ApiEndpoints.Customers);
+    }
+
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

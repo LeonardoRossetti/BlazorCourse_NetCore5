@@ -3,21 +3,15 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 
-<FormComponent ButtonText="Update" Colors="Colors" Makes="Makes" Models="Models" Vehicle="Vehicle" OnValidSubmit="EditVehicle" Title="Edit" />
+<FormComponent ButtonText="Update" Vehicle="Vehicle" OnValidSubmit="EditVehicle" Title="Edit" />
 
 @code {
     [Parameter] public int id { get; set; }
     Vehicle Vehicle = new Vehicle();
-    private List<Make> Makes;
-    private List<Model> Models;
-    private List<Colour> Colors;
 
     protected async override Task OnParametersSetAsync()
     {
         Vehicle = await _client.GetFromJsonAsync<Vehicle>($"{ApiEndpoints.Vehicles}/{id}");
-        Makes = await _client.GetFromJsonAsync<List<Make>>($"{ApiEndpoints.Makes}");
-        Models = await _client.GetFromJsonAsync<List<Model>>($"{ApiEndpoints.Models}");
-        Colors = await _client.GetFromJsonAsync<List<Colour>>($"{ApiEndpoints.Colours}");
     }
 
     async Task EditVehicle()

@@ -132,7 +132,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Customers\FormComponent.razor"
+#line 41 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Customers\FormComponent.razor"
        
     [Parameter] public Customer Customer { get; set; }
     [Parameter] public string Title { get; set; } = "Form";

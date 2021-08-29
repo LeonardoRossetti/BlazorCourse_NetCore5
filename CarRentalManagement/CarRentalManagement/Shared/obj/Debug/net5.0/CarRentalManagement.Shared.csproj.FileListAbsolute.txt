@@ -14,7 +14,6 @@ C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalMana
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\bin\Debug\net5.0\CarRentalManagement.Shared.dll
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\bin\Debug\net5.0\ref\CarRentalManagement.Shared.dll
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\bin\Debug\net5.0\CarRentalManagement.Shared.pdb
-C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\obj\Debug\net5.0\CarRentalManagement.Shared.csproj.AssemblyReference.cache
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\obj\Debug\net5.0\CarRentalManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\obj\Debug\net5.0\CarRentalManagement.Shared.AssemblyInfoInputs.cache
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Shared\obj\Debug\net5.0\CarRentalManagement.Shared.AssemblyInfo.cs

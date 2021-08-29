@@ -132,19 +132,28 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\FormComponent.razor"
+#line 92 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\FormComponent.razor"
        
     [Parameter] public Vehicle Vehicle { get; set; }
-    [Parameter] public List<Make> Makes { get; set; }
-    [Parameter] public List<Model> Models { get; set; }
-    [Parameter] public List<Colour> Colors { get; set; }
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
+    private List<Make> Makes;
+    private List<Model> Models;
+    private List<Colour> Colors;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Makes = await _client.GetFromJsonAsync<List<Make>>($"{ApiEndpoints.Makes}");
+        Models = await _client.GetFromJsonAsync<List<Model>>($"{ApiEndpoints.Models}");
+        Colors = await _client.GetFromJsonAsync<List<Colour>>($"{ApiEndpoints.Colours}");
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591
