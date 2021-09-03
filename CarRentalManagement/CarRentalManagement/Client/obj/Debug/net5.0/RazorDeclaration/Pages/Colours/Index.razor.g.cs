@@ -132,7 +132,7 @@ using CarRentalManagement.Shared.Domain;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\Index.razor"
+#line 2 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\Index.razor"
            [Authorize]
 
 #line default
@@ -145,35 +145,6 @@ using CarRentalManagement.Shared.Domain;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 51 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\Index.razor"
-       
-    private List<Colour> Model;
-
-    protected async override Task OnInitializedAsync()
-    {
-        Model = await _client.GetFromJsonAsync<List<Colour>>(ApiEndpoints.Colours);
-    }
-
-    async Task Delete(int id)
-    {
-        var model = Model.First(m => m.Id == id);
-
-        var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {model.Name}?");
-
-        if (confirm)
-        {
-            await _client.DeleteAsync($"{ApiEndpoints.Colours}/{id}");
-            await OnInitializedAsync();
-        }
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime js { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

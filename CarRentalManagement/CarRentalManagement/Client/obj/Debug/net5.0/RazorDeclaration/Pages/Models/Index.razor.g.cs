@@ -132,7 +132,7 @@ using CarRentalManagement.Shared.Domain;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Models\Index.razor"
+#line 2 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Models\Index.razor"
            [Authorize]
 
 #line default
@@ -145,35 +145,6 @@ using CarRentalManagement.Shared.Domain;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 51 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Models\Index.razor"
-       
-    private List<Model> Model;
-
-    protected async override Task OnInitializedAsync()
-    {
-        Model = await _client.GetFromJsonAsync<List<Model>>(ApiEndpoints.Models);
-    }
-
-    async Task Delete(int id)
-    {
-        var model = Model.First(m => m.Id == id);
-
-        var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {model.Name}?");
-
-        if (confirm)
-        {
-            await _client.DeleteAsync($"{ApiEndpoints.Models}/{id}");
-            await OnInitializedAsync();
-        }
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime js { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

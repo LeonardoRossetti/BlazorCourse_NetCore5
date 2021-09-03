@@ -1,6 +1,4 @@
 ﻿@attribute [Route("/" + PagePath.Customers)]
-@inject HttpClient _client
-@inject IJSRuntime js
 @attribute [Authorize]
 
 <h3 class="card-title">Customers</h3>
@@ -53,24 +51,5 @@ else
 
 
 @code {
-    private List<Customer> Model;
-
-    protected async override Task OnInitializedAsync()
-    {
-        Model = await _client.GetFromJsonAsync<List<Customer>>(ApiEndpoints.Customers);
-    }
-
-    async Task Delete(int id)
-    {
-        var customer = Model.First(m => m.Id == id);
-
-        var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {customer.TaxId}?");
-
-        if (confirm)
-        {
-            await _client.DeleteAsync($"{ApiEndpoints.Customers}/{id}");
-            await OnInitializedAsync();
-        }
-    }
 
 }
