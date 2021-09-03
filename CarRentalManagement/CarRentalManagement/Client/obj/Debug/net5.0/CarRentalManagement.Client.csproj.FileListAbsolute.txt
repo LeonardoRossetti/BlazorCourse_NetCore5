@@ -1358,3 +1358,15 @@ C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalMana
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Vehicles\Edit.razor.g.cs
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Components\BackToList.razor.g.cs
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Components\BackToList.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Customers\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Customers\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Bookings\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Colours\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Makes\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Models\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Vehicles\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Bookings\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Colours\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Makes\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Models\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Vehicles\View.razor.g.cs

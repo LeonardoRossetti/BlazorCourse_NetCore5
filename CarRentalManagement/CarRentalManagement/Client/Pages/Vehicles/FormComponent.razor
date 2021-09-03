@@ -7,85 +7,89 @@
 <EditForm Model="Vehicle" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
-    <div class="form-group">
-        <label>Make: </label>
-        <div>
-            <InputSelect @bind-Value="Vehicle.MakeId" class="form-control">
-                @*InputSelect is a blazor native component*@
-                <option value="">Select Make</option>
-                @if (Makes != null)
-                {
-                    foreach (var make in Makes)
+    <fieldset disabled="@Disabled">
+        <div class="form-group">
+            <label>Make: </label>
+            <div>
+                <InputSelect @bind-Value="Vehicle.MakeId" class="form-control">
+                    @*InputSelect is a blazor native component*@
+                    <option value="">Select Make</option>
+                    @if (Makes != null)
                     {
-                        <option value="@make.Id">@make.Name</option>
+                        foreach (var make in Makes)
+                        {
+                            <option value="@make.Id">@make.Name</option>
+                        }
                     }
-                }
-            </InputSelect>
-            <ValidationMessage For="() => Vehicle.MakeId" />
+                </InputSelect>
+                <ValidationMessage For="() => Vehicle.MakeId" />
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Model: </label>
-        <div>
-            <InputSelect @bind-Value="Vehicle.ModelId" class="form-control">
-                <option value="">Select Model</option>
-                @if (Models != null)
-                {
-                    foreach (var model in Models)
+        <div class="form-group">
+            <label>Model: </label>
+            <div>
+                <InputSelect @bind-Value="Vehicle.ModelId" class="form-control">
+                    <option value="">Select Model</option>
+                    @if (Models != null)
                     {
-                        <option value="@model.Id">@model.Name</option>
+                        foreach (var model in Models)
+                        {
+                            <option value="@model.Id">@model.Name</option>
+                        }
                     }
-                }
-            </InputSelect>
-            <ValidationMessage For="() => Vehicle.ModelId" />
+                </InputSelect>
+                <ValidationMessage For="() => Vehicle.ModelId" />
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Color: </label>
-        <div>
-            <InputSelect @bind-Value="Vehicle.ColourId" class="form-control">
-                <option value="">Select Color</option>
-                @if (Colors != null)
-                {
-                    foreach (var color in Colors)
+        <div class="form-group">
+            <label>Color: </label>
+            <div>
+                <InputSelect @bind-Value="Vehicle.ColourId" class="form-control">
+                    <option value="">Select Color</option>
+                    @if (Colors != null)
                     {
-                        <option value="@color.Id">@color.Name</option>
+                        foreach (var color in Colors)
+                        {
+                            <option value="@color.Id">@color.Name</option>
+                        }
                     }
-                }
-            </InputSelect>
-            <ValidationMessage For="() => Vehicle.ColourId" />
+                </InputSelect>
+                <ValidationMessage For="() => Vehicle.ColourId" />
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Year: </label>
-        <div>
-            <InputNumber @bind-Value="Vehicle.Year" class="form-control" />
-            <ValidationMessage For="() => Vehicle.Year" />
+        <div class="form-group">
+            <label>Year: </label>
+            <div>
+                <InputNumber @bind-Value="Vehicle.Year" class="form-control" />
+                <ValidationMessage For="() => Vehicle.Year" />
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Licence Plate Number: </label>
-        <div>
-            <InputText @bind-Value="Vehicle.LicensePlateNumber" class="form-control" />
-            <ValidationMessage For="() => Vehicle.LicensePlateNumber" />
+        <div class="form-group">
+            <label>Licence Plate Number: </label>
+            <div>
+                <InputText @bind-Value="Vehicle.LicensePlateNumber" class="form-control" />
+                <ValidationMessage For="() => Vehicle.LicensePlateNumber" />
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Vehicle Identification Number: </label>
-        <div>
-            <InputText @bind-Value="Vehicle.Vin" class="form-control" />
-            <ValidationMessage For="() => Vehicle.Vin" />
+        <div class="form-group">
+            <label>Vehicle Identification Number: </label>
+            <div>
+                <InputText @bind-Value="Vehicle.Vin" class="form-control" />
+                <ValidationMessage For="() => Vehicle.Vin" />
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Daily Rate: </label>
-        <div>
-            <InputNumber @bind-Value="Vehicle.RentalRate" class="form-control" />
-            <ValidationMessage For="() => Vehicle.RentalRate" />
+        <div class="form-group">
+            <label>Daily Rate: </label>
+            <div>
+                <InputNumber @bind-Value="Vehicle.RentalRate" class="form-control" />
+                <ValidationMessage For="() => Vehicle.RentalRate" />
+            </div>
         </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+    </fieldset>
+    @if (!Disabled)
+    {
+        <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+    }
     <BackToList Target="@PagePath.Makes" />
 </EditForm>
 
@@ -94,6 +98,7 @@
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool Disabled { get; set; } = false;
 
     private List<Make> Makes;
     private List<Model> Models;

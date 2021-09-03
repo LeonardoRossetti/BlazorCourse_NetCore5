@@ -1,0 +1,16 @@
+﻿@attribute [Route("/" + PagePath.Bookings + "/view/{id:int}")]
+
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<FormComponent Disabled="true" Booking="Booking" Title="View Booking" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Booking Booking = new Booking();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Booking = await _client.GetFromJsonAsync<Booking>($"{ApiEndpoints.Bookings}/{id}");
+    }
+}

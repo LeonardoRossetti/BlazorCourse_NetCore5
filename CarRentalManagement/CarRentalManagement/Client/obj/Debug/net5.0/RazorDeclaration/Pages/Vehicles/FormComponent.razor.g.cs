@@ -132,12 +132,13 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 92 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\FormComponent.razor"
+#line 96 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\FormComponent.razor"
        
     [Parameter] public Vehicle Vehicle { get; set; }
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool Disabled { get; set; } = false;
 
     private List<Make> Makes;
     private List<Model> Models;

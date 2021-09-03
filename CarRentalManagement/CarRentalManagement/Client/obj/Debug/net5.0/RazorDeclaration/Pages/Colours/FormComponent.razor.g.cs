@@ -132,12 +132,13 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\FormComponent.razor"
+#line 24 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\FormComponent.razor"
        
     [Parameter] public Colour Colour { get; set; }
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool Disabled { get; set; } = false;
 
 #line default
 #line hidden

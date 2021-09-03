@@ -1,0 +1,16 @@
+﻿@attribute [Route("/" + PagePath.Models + "/view/{id:int}")]
+
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<FormComponent Disabled="true" Model="Model" Title="View" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Model Model = new Model();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Model = await _client.GetFromJsonAsync<Model>($"{ApiEndpoints.Models}/{id}");
+    }
+}

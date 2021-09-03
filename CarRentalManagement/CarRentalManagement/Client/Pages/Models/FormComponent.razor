@@ -5,15 +5,19 @@
 <EditForm Model="Model" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
-    <div class="form-group">
-        <label>Model name: </label>
-        <div>
-            <InputText @bind-Value="Model.Name" class="form-control" />
-            <ValidationMessage For="() => Model.Name" />
+    <fieldset disabled="@Disabled">
+        <div class="form-group">
+            <label>Model name: </label>
+            <div>
+                <InputText @bind-Value="Model.Name" class="form-control" />
+                <ValidationMessage For="() => Model.Name" />
+            </div>
         </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+    </fieldset>
+    @if (!Disabled)
+    {
+        <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
+    }
     <BackToList Target="@PagePath.Models" />
 </EditForm>
 
@@ -22,4 +26,5 @@
     [Parameter] public string Title { get; set; } = "Form";
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool Disabled { get; set; } = false;
 }
