@@ -2597,6 +2597,18 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Toolbelt.Blazor.HttpClientInterceptor/10.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "3.2.0-preview2.20160.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        }
+      },
       "CarRentalManagement.Client/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -2605,7 +2617,8 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.8",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "5.0.8",
           "Microsoft.Extensions.Http": "5.0.0",
-          "System.Net.Http.Json": "5.0.0"
+          "System.Net.Http.Json": "5.0.0",
+          "Toolbelt.Blazor.HttpClientInterceptor": "10.0.0"
         },
         "compile": {
           "bin/placeholder/CarRentalManagement.Client.dll": {}
@@ -8561,6 +8574,21 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll",
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
+      ]
+    },
+    "Toolbelt.Blazor.HttpClientInterceptor/10.0.0": {
+      "sha512": "W+3xvZe9RYefn1CVtMDnCrj1SOZ80JKsuXFBO/IlFzm+St6sg8rvmXlDrtjIAEjE73xyEqX1diVo3SYZIRTvfg==",
+      "type": "package",
+      "path": "toolbelt.blazor.httpclientinterceptor/10.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll",
+        "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.xml",
+        "nupkg-icon.png",
+        "toolbelt.blazor.httpclientinterceptor.10.0.0.nupkg.sha512",
+        "toolbelt.blazor.httpclientinterceptor.nuspec"
       ]
     },
     "CarRentalManagement.Client/1.0.0": {

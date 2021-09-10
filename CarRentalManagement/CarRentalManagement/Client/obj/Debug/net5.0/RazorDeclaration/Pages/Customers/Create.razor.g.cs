@@ -138,27 +138,6 @@ using CarRentalManagement.Shared.Domain;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Customers\Create.razor"
-       
-    Customer Customer = new Customer();
-
-    protected async override Task OnInitializedAsync()
-    {
-    }
-
-    private async Task CreateCustomer()
-    {
-        await _client.PostAsJsonAsync(ApiEndpoints.Customers, Customer);
-        _navManager.NavigateTo(PagePath.Customers);
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

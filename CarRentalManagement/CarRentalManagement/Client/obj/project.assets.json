@@ -353,6 +353,18 @@
           "lib/net5.0/System.Net.Http.Json.dll": {}
         }
       },
+      "Toolbelt.Blazor.HttpClientInterceptor/10.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "3.2.0-preview2.20160.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        }
+      },
       "CarRentalManagement.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -714,6 +726,18 @@
         },
         "runtime": {
           "lib/net5.0/System.Net.Http.Json.dll": {}
+        }
+      },
+      "Toolbelt.Blazor.HttpClientInterceptor/10.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "3.2.0-preview2.20160.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll": {}
         }
       },
       "CarRentalManagement.Shared/1.0.0": {
@@ -1305,6 +1329,21 @@
         "version.txt"
       ]
     },
+    "Toolbelt.Blazor.HttpClientInterceptor/10.0.0": {
+      "sha512": "W+3xvZe9RYefn1CVtMDnCrj1SOZ80JKsuXFBO/IlFzm+St6sg8rvmXlDrtjIAEjE73xyEqX1diVo3SYZIRTvfg==",
+      "type": "package",
+      "path": "toolbelt.blazor.httpclientinterceptor/10.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.dll",
+        "lib/netstandard2.1/Toolbelt.Blazor.HttpClientInterceptor.xml",
+        "nupkg-icon.png",
+        "toolbelt.blazor.httpclientinterceptor.10.0.0.nupkg.sha512",
+        "toolbelt.blazor.httpclientinterceptor.nuspec"
+      ]
+    },
     "CarRentalManagement.Shared/1.0.0": {
       "type": "project",
       "path": "../Shared/CarRentalManagement.Shared.csproj",
@@ -1318,7 +1357,8 @@
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication >= 5.0.8",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.8",
       "Microsoft.Extensions.Http >= 5.0.0",
-      "System.Net.Http.Json >= 5.0.0"
+      "System.Net.Http.Json >= 5.0.0",
+      "Toolbelt.Blazor.HttpClientInterceptor >= 10.0.0"
     ]
   },
   "packageFolders": {
@@ -1389,6 +1429,10 @@
           "System.Net.Http.Json": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "Toolbelt.Blazor.HttpClientInterceptor": {
+            "target": "Package",
+            "version": "[10.0.0, )"
           }
         },
         "imports": [

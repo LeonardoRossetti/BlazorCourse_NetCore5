@@ -138,26 +138,6 @@ using CarRentalManagement.Shared.Domain;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\Create.razor"
-       
-    Booking Booking = new Booking()
-    {
-        DateOut = DateTime.Now.Date
-    };
-   
-    private async Task CreateBookings()
-    {
-        await _client.PostAsJsonAsync(ApiEndpoints.Bookings, Booking);
-        _navManager.NavigateTo(PagePath.Bookings);
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

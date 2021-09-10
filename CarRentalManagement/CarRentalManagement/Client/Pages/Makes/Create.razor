@@ -1,20 +1,4 @@
 ﻿@attribute [Route("/" + PagePath.Makes + "/create")]
-@inject HttpClient _client
-@inject NavigationManager _navManager
 
 <FormComponent ButtonText="Create Make" OnValidSubmit="CreateMake" Make="Make" Title="Create New Make" />
 
-@code {
-    Make Make = new Make();
-
-    protected async override Task OnInitializedAsync()
-    {
-    }
-
-    private async Task CreateMake()
-    {
-        await _client.PostAsJsonAsync(ApiEndpoints.Makes, Make);
-        _navManager.NavigateTo(PagePath.Makes);
-    }
-
-}

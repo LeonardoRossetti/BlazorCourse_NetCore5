@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AZDc4pan2qX0zqbKFfVYTVf/JaQ8F1zsjE1DvcRp/Nnpj8k9ku3Um7glUk97ds6L1dpIMNk5ViT2Z86qkZPMCw==",
+  "dgSpecHash": "NY4ll6dkMWlaVk89QSYyxta5X7T438nXxSg4fiEgLubalDT9Af/GKJtt6niBGFVZhn0/gd46DrC1xX/tJ1vyGg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Leonardo\\source\\repos\\Blazor Course\\BlazorCourse_NetCore5\\CarRentalManagement\\CarRentalManagement\\Server\\CarRentalManagement.Server.csproj",
   "expectedPackageFiles": [
@@ -170,7 +170,8 @@
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Leonardo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Leonardo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Leonardo\\.nuget\\packages\\toolbelt.blazor.httpclientinterceptor\\10.0.0\\toolbelt.blazor.httpclientinterceptor.10.0.0.nupkg.sha512"
   ],
   "logs": []
 }

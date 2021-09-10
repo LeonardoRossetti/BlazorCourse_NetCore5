@@ -1,19 +1,4 @@
 ﻿@attribute [Route("/" + PagePath.Bookings + "/create")]
-@inject HttpClient _client
-@inject NavigationManager _navManager
 
 <FormComponent Booking="Booking" ButtonText="Create Booking" Title="Create New Booking" OnValidSubmit="CreateBookings" />
 
-@code {
-    Booking Booking = new Booking()
-    {
-        DateOut = DateTime.Now.Date
-    };
-   
-    private async Task CreateBookings()
-    {
-        await _client.PostAsJsonAsync(ApiEndpoints.Bookings, Booking);
-        _navManager.NavigateTo(PagePath.Bookings);
-    }
-
-}

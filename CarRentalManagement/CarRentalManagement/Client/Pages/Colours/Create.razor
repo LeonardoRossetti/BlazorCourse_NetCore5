@@ -1,20 +1,7 @@
 ﻿@attribute [Route("/" + PagePath.Colours + "/create")]
-@inject HttpClient _client
-@inject NavigationManager _navManager
 
 <FormComponent ButtonText="Create Colour" OnValidSubmit="CreateColours" Title="Create New Colour" Colour="Colour" />
 
-@code {
-    Colour Colour = new Colour();
-
-    protected async override Task OnInitializedAsync()
-    {
-    }
-
-    private async Task CreateColours()
-    {
-        await _client.PostAsJsonAsync(ApiEndpoints.Colours, Colour);
-        _navManager.NavigateTo(PagePath.Colours);
-    }
+@code {   
 
 }

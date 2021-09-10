@@ -138,27 +138,6 @@ using CarRentalManagement.Shared.Domain;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 7 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Colours\Create.razor"
-       
-    Colour Colour = new Colour();
-
-    protected async override Task OnInitializedAsync()
-    {
-    }
-
-    private async Task CreateColours()
-    {
-        await _client.PostAsJsonAsync(ApiEndpoints.Colours, Colour);
-        _navManager.NavigateTo(PagePath.Colours);
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

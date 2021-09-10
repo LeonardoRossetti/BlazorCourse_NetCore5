@@ -1370,3 +1370,12 @@ C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalMana
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Makes\View.razor.g.cs
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Models\View.razor.g.cs
 C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Vehicles\View.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\bin\Debug\net5.0\wwwroot\_framework\Toolbelt.Blazor.HttpClientInterceptor.dll.gz
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\bin\Debug\net5.0\wwwroot\_framework\Toolbelt.Blazor.HttpClientInterceptor.dll
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\build-gz\BB+6nwUw.gz
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\404.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\500.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Unauthorized.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\404.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\500.razor.g.cs
+C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\obj\Debug\net5.0\Razor\Pages\Unauthorized.razor.g.cs

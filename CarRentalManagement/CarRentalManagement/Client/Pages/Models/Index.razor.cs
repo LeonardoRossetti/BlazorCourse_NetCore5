@@ -1,4 +1,5 @@
-﻿using CarRentalManagement.Client.Static;
+﻿using CarRentalManagement.Client.Services;
+using CarRentalManagement.Client.Static;
 using CarRentalManagement.Shared.Domain;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -11,15 +12,17 @@ using System.Threading.Tasks;
 
 namespace CarRentalManagement.Client.Pages.Models
 {
-    public partial class Index
+    public partial class Index : IDisposable
     {
         [Inject] HttpClient _client { get; set; }
         [Inject] IJSRuntime js { get; set; }
+        [Inject] HttpInterceptorService _interceptor { get; set; }
 
         private List<Model> Model;
 
         protected async override Task OnInitializedAsync()
         {
+            _interceptor.MonitorEvent();
             Model = await _client.GetFromJsonAsync<List<Model>>(ApiEndpoints.Models);
         }
 
@@ -31,9 +34,15 @@ namespace CarRentalManagement.Client.Pages.Models
 
             if (confirm)
             {
+                _interceptor.MonitorEvent();
                 await _client.DeleteAsync($"{ApiEndpoints.Models}/{id}");
                 await OnInitializedAsync();
             }
+        }
+
+        public void Dispose()
+        {
+            _interceptor.DisposeEvent();
         }
     }
 }
