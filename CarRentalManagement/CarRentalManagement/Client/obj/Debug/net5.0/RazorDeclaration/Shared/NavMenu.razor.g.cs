@@ -27,22 +27,8 @@ using System.Net.Http.Json;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\_Imports.razor"
-using Microsoft.AspNetCore.Components.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 4 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\_Imports.razor"
-using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 #line default
 #line hidden
@@ -124,6 +110,20 @@ using CarRentalManagement.Shared.Domain;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Shared\NavMenu.razor"
+using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Shared\NavMenu.razor"
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -132,7 +132,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Shared\NavMenu.razor"
+#line 86 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
@@ -143,9 +143,17 @@ using CarRentalManagement.Shared.Domain;
         collapseNavMenu = !collapseNavMenu;
     }
 
+    private async Task BeginSignOut(MouseEventArgs args)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo("authentication/logout");
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignOutSessionStateManager SignOutManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigation { get; set; }
     }
 }
 #pragma warning restore 1591
