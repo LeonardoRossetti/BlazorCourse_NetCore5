@@ -1,5 +1,6 @@
 ﻿@attribute [Route("/" + PagePath.Bookings)]
 @attribute [Authorize]
+@implements IDisposable
 
 <h3 class="card-title">Bookings</h3>
 
@@ -16,7 +17,7 @@
 }
 else
 {
-    <table class="table">
+    <table class="table" id="@_tableId">
         <thead>
             <tr>
                 <th>Customer Tax Id</th>

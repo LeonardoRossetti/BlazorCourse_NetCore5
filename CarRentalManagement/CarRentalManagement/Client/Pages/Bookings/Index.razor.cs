@@ -20,10 +20,22 @@ namespace CarRentalManagement.Client.Pages.Bookings
 
         private List<Booking> Model;
 
+        private string _tableId = "bookingsTable";
+
         protected async override Task OnInitializedAsync()
         {
             _interceptor.MonitorEvent();
             Model = await _client.GetFromJsonAsync<List<Booking>>(ApiEndpoints.Bookings);
+        }
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            await js.InvokeVoidAsync("AddDataTable", "#"+ _tableId);
+        }
+
+        void IDisposable.Dispose()
+        {
+            js.InvokeVoidAsync("DataTablesDispose", "#" + _tableId);
         }
 
         async Task Delete(int id)
