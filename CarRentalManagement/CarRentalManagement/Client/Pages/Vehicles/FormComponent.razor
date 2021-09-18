@@ -8,6 +8,14 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
     <fieldset disabled="@Disabled">
+
+        <div class="form-group">
+            <label>Image (Optional):</label>
+            <div>
+                <InputFile OnChange="HandleFileSelection" />
+                <p class="text-danger">@UploadFileWarning</p>
+            </div>
+        </div>
         <div class="form-group">
             <label>Make: </label>
             <div>
@@ -90,7 +98,7 @@
     {
         <button type="submit" class="btn btn-success btn-block">@ButtonText</button>
     }
-    <BackToList Target="@PagePath.Makes" />
+    <BackToList Target="@PagePath.Vehicles" />
 </EditForm>
 
 @code {
@@ -103,6 +111,30 @@
     private List<Make> Makes;
     private List<Model> Models;
     private List<Colour> Colors;
+    string UploadFileWarning;
+
+    List<string> AllowedImageExtensions = new List<string>() { ".jpg", ".jpeg", ".png" };
+
+    private async void HandleFileSelection(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            var ext = System.IO.Path.GetExtension(file.Name);
+            if (AllowedImageExtensions.Contains(ext.ToLower()))
+            {
+                var picId = Guid.NewGuid().ToString().Replace("-", "");
+                Vehicle.ImageName = $"{picId}{ext}";
+                Vehicle.Image = new byte[file.Size];
+                await file.OpenReadStream().ReadAsync(Vehicle.Image);
+                UploadFileWarning = string.Empty;
+            }
+            else
+            {
+                UploadFileWarning = "Please select a valid image file (*.jpg | *.png)";
+            }
+        }
+    }
 
     protected async override Task OnInitializedAsync()
     {

@@ -132,7 +132,7 @@ using CarRentalManagement.Shared.Domain;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 96 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\FormComponent.razor"
+#line 104 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Vehicles\FormComponent.razor"
        
     [Parameter] public Vehicle Vehicle { get; set; }
     [Parameter] public string Title { get; set; } = "Form";
@@ -143,6 +143,30 @@ using CarRentalManagement.Shared.Domain;
     private List<Make> Makes;
     private List<Model> Models;
     private List<Colour> Colors;
+    string UploadFileWarning;
+
+    List<string> AllowedImageExtensions = new List<string>() { ".jpg", ".jpeg", ".png" };
+
+    private async void HandleFileSelection(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            var ext = System.IO.Path.GetExtension(file.Name);
+            if (AllowedImageExtensions.Contains(ext.ToLower()))
+            {
+                var picId = Guid.NewGuid().ToString().Replace("-", "");
+                Vehicle.ImageName = $"{picId}{ext}";
+                Vehicle.Image = new byte[file.Size];
+                await file.OpenReadStream().ReadAsync(Vehicle.Image);
+                UploadFileWarning = string.Empty;
+            }
+            else
+            {
+                UploadFileWarning = "Please select a valid image file (*.jpg | *.png)";
+            }
+        }
+    }
 
     protected async override Task OnInitializedAsync()
     {

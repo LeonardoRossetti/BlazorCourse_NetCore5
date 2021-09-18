@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using CarRentalManagement.Server.Data;
 using CarRentalManagement.Shared.Domain;
 using CarRentalManagement.Server.IRepository;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace CarRentalManagement.Server.Controllers
 {
@@ -16,10 +18,14 @@ namespace CarRentalManagement.Server.Controllers
     public class VehicleController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IWebHostEnvironment _webHostEnvironment; //this will give us access to our static folders (wwwroot for example)
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public VehicleController(IUnitOfWork unitOfWork)
+        public VehicleController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet]
@@ -48,6 +54,11 @@ namespace CarRentalManagement.Server.Controllers
             if (id != vehicle.Id)
                 return BadRequest();
 
+            if (vehicle.Image != null)
+            {
+                vehicle.ImageName = CreateFile(vehicle.Image, vehicle.ImageName);
+            }
+
             _unitOfWork.VehicleRepository.Update(vehicle);
 
             try
@@ -67,6 +78,11 @@ namespace CarRentalManagement.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Vehicle>> PostVehicle(Vehicle vehicle)
         {
+            if (vehicle.Image != null)
+            {
+                vehicle.ImageName = CreateFile(vehicle.Image, vehicle.ImageName);
+            }
+
             await _unitOfWork.VehicleRepository.Insert(vehicle);
             await _unitOfWork.Save(HttpContext);
 
@@ -89,6 +105,16 @@ namespace CarRentalManagement.Server.Controllers
         {
             var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id);
             return vehicle != null;
+        }
+
+        private string CreateFile(byte[] image, string name)
+        {
+            var url = _httpContextAccessor.HttpContext.Request.Host.Value;
+            var path = $"{_webHostEnvironment.WebRootPath}\\uploads\\{name}";
+            var fileStream = System.IO.File.Create(path);
+            fileStream.Write(image, 0, image.Length);
+            fileStream.Close();
+            return $"https://{url}/uploads/{name}";
         }
     }
 }
