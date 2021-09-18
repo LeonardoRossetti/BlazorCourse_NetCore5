@@ -1,4 +1,5 @@
-﻿using CarRentalManagement.Client.Services;
+﻿using CarRentalManagement.Client.Contracts;
+using CarRentalManagement.Client.Services;
 using CarRentalManagement.Client.Static;
 using CarRentalManagement.Shared.Domain;
 using Microsoft.AspNetCore.Components;
@@ -14,18 +15,16 @@ namespace CarRentalManagement.Client.Pages.Bookings
 {
     public partial class Index : IDisposable
     {
-        [Inject] HttpClient _client { get; set; }
+        [Inject] IHttpRepository<Booking> _client { get; set; }
         [Inject] IJSRuntime js { get; set; }
-        [Inject] HttpInterceptorService _interceptor { get; set; }
 
-        private List<Booking> Model;
+        private IList<Booking> Model;
 
         private string _tableId = "bookingsTable";
 
         protected async override Task OnInitializedAsync()
         {
-            _interceptor.MonitorEvent();
-            Model = await _client.GetFromJsonAsync<List<Booking>>(ApiEndpoints.Bookings);
+            Model = await _client.GetAll(ApiEndpoints.Bookings);
         }
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
@@ -46,15 +45,9 @@ namespace CarRentalManagement.Client.Pages.Bookings
 
             if (confirm)
             {
-                _interceptor.MonitorEvent();
-                await _client.DeleteAsync($"{ApiEndpoints.Bookings}/{id}");
+                await _client.Delete(ApiEndpoints.Bookings, id);
                 await OnInitializedAsync();
             }
-        }
-
-        public void Dispose()
-        {
-            _interceptor.DisposeEvent();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CarRentalManagement.Client.Services;
+﻿using CarRentalManagement.Client.Contracts;
+using CarRentalManagement.Client.Services;
 using CarRentalManagement.Client.Static;
 using CarRentalManagement.Shared.Domain;
 using Microsoft.AspNetCore.Components;
@@ -12,12 +13,11 @@ using System.Threading.Tasks;
 
 namespace CarRentalManagement.Client.Pages.Makes
 {
-    public partial class Create : IDisposable
+    public partial class Create
     {
-        [Inject] HttpClient _client { get; set; }
+        [Inject] IHttpRepository<Make> _client { get; set; }
         [Inject] NavigationManager _navManager { get; set; }
         [Inject] IJSRuntime js { get; set; }
-        [Inject] HttpInterceptorService _interceptor { get; set; }
 
         Make Make = new Make();
 
@@ -27,14 +27,8 @@ namespace CarRentalManagement.Client.Pages.Makes
 
         private async Task CreateMake()
         {
-            _interceptor.MonitorEvent();
-            await _client.PostAsJsonAsync(ApiEndpoints.Makes, Make);
+            await _client.Create(ApiEndpoints.Makes, Make);
             _navManager.NavigateTo(PagePath.Makes);
-        }
-
-        public void Dispose()
-        {
-            _interceptor.DisposeEvent();
         }
     }
 }
