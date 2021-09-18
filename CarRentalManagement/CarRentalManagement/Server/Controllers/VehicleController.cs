@@ -31,16 +31,15 @@ namespace CarRentalManagement.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetVehicles()
         {
-            var includes = new List<string>() { "Make", "Model", "Colour" };
-            var vehicle = await _unitOfWork.VehicleRepository.GetAll(includes: includes);
+            var vehicle = await _unitOfWork.VehicleRepository.GetAll(includes: q => q.Include(x => x.Make).Include(x => x.Model).Include(x => x.Colour));
             return Ok(vehicle);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetVehicle(int id)
         {
-            var includes = new List<string>() { "Make", "Model", "Colour", "Bookings" };
-            var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id, includes);
+            var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id, 
+                includes: q => q.Include(x => x.Make).Include(x => x.Model).Include(x => x.Colour).Include(x => x.Bookings));
 
             if (vehicle == null)
                 return NotFound();
