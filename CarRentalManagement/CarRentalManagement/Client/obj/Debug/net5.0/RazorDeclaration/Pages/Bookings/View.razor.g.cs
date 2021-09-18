@@ -138,22 +138,6 @@ using CarRentalManagement.Shared.Domain;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 8 "C:\Users\Leonardo\source\repos\Blazor Course\BlazorCourse_NetCore5\CarRentalManagement\CarRentalManagement\Client\Pages\Bookings\View.razor"
-       
-    [Parameter] public int id { get; set; }
-    Booking Booking = new Booking();
-
-    protected async override Task OnParametersSetAsync()
-    {
-        Booking = await _client.GetFromJsonAsync<Booking>($"{ApiEndpoints.Bookings}/{id}");
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient _client { get; set; }
     }
 }
 #pragma warning restore 1591

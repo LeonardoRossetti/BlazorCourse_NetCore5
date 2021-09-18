@@ -38,6 +38,17 @@ namespace CarRentalManagement.Server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetVehicle(int id)
         {
+            var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id);
+
+            if (vehicle == null)
+                return NotFound();
+
+            return Ok(vehicle);
+        }
+
+        [HttpGet("{id}/details")]
+        public async Task<IActionResult> GetVehicleDetails(int id)
+        {
             var vehicle = await _unitOfWork.VehicleRepository.Get(m => m.Id == id, 
                 includes: q => q.Include(x => x.Make).Include(x => x.Model).Include(x => x.Colour).Include(x => x.Bookings));
 

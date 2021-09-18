@@ -34,7 +34,13 @@ namespace CarRentalManagement.Client.Services
         public async Task<T> Get(string url, int id)
         {
             _interceptor.MonitorEvent();
-            return await _client.GetFromJsonAsync<T>(url);
+            return await _client.GetFromJsonAsync<T>($"{url}/{id}");
+        }
+
+        public async Task<T> GetDetails(string url, int id)
+        {
+            _interceptor.MonitorEvent();
+            return await _client.GetFromJsonAsync<T>($"{url}/{id}/details");
         }
 
         public async Task<IList<T>> GetAll(string url)

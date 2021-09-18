@@ -1,16 +1,3 @@
 ﻿@attribute [Route("/" + PagePath.Vehicles + "/view/{id:int}")]
 
-@inject HttpClient _client
-@inject NavigationManager _navManager
-
 <FormComponent Disabled="true" Vehicle="Vehicle" Title="View" />
-
-@code {
-    [Parameter] public int id { get; set; }
-    Vehicle Vehicle = new Vehicle();
-
-    protected async override Task OnParametersSetAsync()
-    {
-        Vehicle = await _client.GetFromJsonAsync<Vehicle>($"{ApiEndpoints.Vehicles}/{id}");
-    }
-}
